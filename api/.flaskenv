@@ -1,0 +1,2 @@
+FLASK_APP=weatherstation_backend.py
+FLASK_ENV=development
