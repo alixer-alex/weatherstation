@@ -1,32 +1,41 @@
-import logo from './logo.svg';
+
 import React,{useState, useEffect} from 'react';
 import './App.css';
 
+
+
 function App() {
   const [currentTemp, setCurrentTemp]= useState(0);
+  const [currentLoc, setCurrentLoc] = useState("Great Neck New York");
+  const onChange=(e) => {
+    e.preventDefault();
+    setCurrentLoc(e.target.location.value);
+  };
   useEffect(()=>{
-    fetch('/weather').then(res=>res.json().then(data=>{
-      setCurrentTemp(data.temp);
-    }))
-  },[])
+    fetch('/get-location?location='+ currentLoc)
+  .then(res=>res.json()
+  .then(data=>{
+    setCurrentTemp(data.temp);
+  }))}
+  ,[currentLoc])
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p> The current temperature at great neck new york is {currentTemp}</p>
-      </header>
+    <>
+    <a className="me" href="https://tenors-website.vercel.app/">Me</a>
+    <div>
+      <form className="input" onSubmit={(e)=>onChange(e)}> 
+        <label htmlFor="Location">Location:</label><br/>
+        <input type="text" name="location"/>
+        <input className="butto" type="submit" value="Submit." />
+      </form>
+
     </div>
+    <div className="weather"> 
+      <p> The highest temp in {currentLoc} in the next 24 hours is {currentTemp}</p>
+    </div>
+    </>  
   );
 }
 
