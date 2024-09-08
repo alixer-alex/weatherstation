@@ -12,9 +12,11 @@ function App() {
     setCurrentLoc(e.target.location.value);
   };
   useEffect(()=>{
-    fetch('/get-location?location='+ currentLoc)
+    setCurrentTemp(0);
+    fetch('/api/weather?location='+ currentLoc)
   .then(res=>res.json()
   .then(data=>{
+    
     setCurrentTemp(data.temp);
   }))}
   ,[currentLoc])
@@ -33,7 +35,7 @@ function App() {
 
     </div>
     <div className="weather"> 
-      <p> The highest temp in {currentLoc} in the next 24 hours is {currentTemp}</p>
+      <p> The highest temp in {currentLoc} in the next 24 hours is {currentTemp} F</p>
     </div>
     </>  
   );
