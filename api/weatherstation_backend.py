@@ -2,12 +2,8 @@ from flask import Flask, request
 import time
 from weatherstation_classes import nominatim_internet, nws_internet
 from project3 import parse_query
-from waitress import serve
-app = Flask(__name__, static_folder='../build',static_url_path='/')
+app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return app.send_static_file('index.html')
 
 @app.route('/api/weather')
 def get_Weather_data():
@@ -40,6 +36,3 @@ def get_weather(long,lat):
     instance=parse_query(query, instance.response)
     
     return instance[0]
-
-if __name__ == "__main__":
-    serve(get_Weather_data, host ='0.0.0.0', port=5000, threads=1)
