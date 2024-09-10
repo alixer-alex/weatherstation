@@ -4,7 +4,6 @@ from weatherstation_classes import nominatim_internet, nws_internet
 from project3 import parse_query
 app = Flask(__name__)
 
-
 @app.route('/api/weather')
 def get_Weather_data():
     location= request.args.get("location")
