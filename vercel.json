@@ -4,6 +4,6 @@
       { "src": "app.py", "use": "@vercel/python" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/weatherstation_backend.py" }
+      { "src": "/(.*)", "dest": "api/weatherstation_backend.py" }
     ]
   }
