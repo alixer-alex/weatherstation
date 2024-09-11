@@ -2,7 +2,11 @@ from flask import Flask, request
 import time
 from weatherstation_classes import nominatim_internet, nws_internet
 from project3 import parse_query
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../build', static_url_path='/')
+
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 @app.route('/api/weather')
 def get_Weather_data():
