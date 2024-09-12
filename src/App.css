@@ -2,31 +2,52 @@
   padding-top: 83.3333px;
   text-align: center;
   font-family: 'Arial Narrow';
+  font-weight: bold;
 }
 .me{
   color:black;
   font-family: 'Arial Narrow';
   text-decoration: none;
+  font-weight: bold;
   display: block;
   
   margin-top: 30px;
   padding-left: 25px;
 
 }
+.canada{
+  background-color: #8ACE00;
+  border: none;	
+  font-weight: bold;
+  float: right;
+  display: block;
+  padding-right: 25px;
+  margin-top: 30px;
+}
 input[type="text"], textarea{
   background:#8ACE00;
+}
+.brat{
+  border-radius:12px;
+  display: block;
+  padding-left: 25%;
 }
 .input{
   padding-top: 83.333px;
   padding-left: 25px;
+  font-weight: bold;
   font-family: 'Arial Narrow';
   background:#8ACE00;
 
 
 }
+
+
+
 .butto{
   background-color: #8ACE00;
   border: none;	
+  font-weight: bold;
 }
 
 body{
