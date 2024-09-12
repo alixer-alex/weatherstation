@@ -27,9 +27,9 @@ function App() {
   .then(data=>{
     
     setCurrentTemp(data.temp);
-    setCurrentTempMin(data.temp2);
+    setCurrentTempMin(data.tempmin);
     setCurrentTempC(data.tempc);
-    setCurrentTempCMin(data.tempc2);
+    setCurrentTempCMin(data.tempcmin);
   }))}
   ,[currentLoc])
 
