@@ -57,3 +57,6 @@ def get_weather(long,lat):
     instancec=parse_query(queryc, instance.response)
     instancec2=parse_query(queryc2, instance.response)
     return instancef[0], instance2[0], instancec[0], instancec2[0]
+
+if __name__ == "__main__":
+    app.run()
